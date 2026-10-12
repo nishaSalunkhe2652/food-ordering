@@ -11,7 +11,7 @@ function Menu({ addToCart }) {
 
   // Fetch foods from backend API
   useEffect(() => {
-    fetch("http://localhost:5000/api/foods")
+    fetch("http://https://food-ordering-5v9t.onrender.com/api/foods")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch food items");

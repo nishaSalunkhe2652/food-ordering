@@ -63,7 +63,7 @@ function Checkout({ cart, clearCart }) {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/offers/apply",
+        "http://https://food-ordering-5v9t.onrender.com/api/offers/apply",
         {
           method: "POST",
           headers: {
@@ -223,7 +223,7 @@ function Checkout({ cart, clearCart }) {
       console.log("ORDER DATA:", orderData);
 
       const response = await fetch(
-        "http://localhost:5000/api/orders",
+        "http://https://food-ordering-5v9t.onrender.com/api/orders",
         {
           method: "POST",
           headers: {

@@ -32,7 +32,7 @@ function Admin() {
   const fetchOrders = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/orders"
+        "http://https://food-ordering-5v9t.onrender.com/api/orders"
       );
 
       if (!response.ok) {
@@ -51,7 +51,7 @@ function Admin() {
         orderList.map(async (order) => {
           try {
             const itemResponse = await fetch(
-              "http://localhost:5000/api/orders/" +
+              "http://https://food-ordering-5v9t.onrender.com/api/orders/" +
                 order.id +
                 "/items"
             );
@@ -97,7 +97,7 @@ function Admin() {
   const fetchSuggestions = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/suggestions"
+        "http://https://food-ordering-5v9t.onrender.com/api/suggestions"
       );
 
       if (!response.ok) {
@@ -127,7 +127,7 @@ function Admin() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/admin/offers"
+        "http://https://food-ordering-5v9t.onrender.com/api/admin/offers"
       );
 
       if (!response.ok) {
@@ -359,9 +359,9 @@ function Admin() {
 
     try {
       const url = editingOffer
-        ? "http://localhost:5000/api/offers/" +
+        ? "http://https://food-ordering-5v9t.onrender.com/api/offers/" +
           editingOffer.id
-        : "http://localhost:5000/api/offers";
+        : "http://https://food-ordering-5v9t.onrender.com/api/offers";
 
       const method = editingOffer ? "PUT" : "POST";
 
@@ -462,7 +462,7 @@ function Admin() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/offers/" + id,
+        "http://https://food-ordering-5v9t.onrender.com/api/offers/" + id,
         {
           method: "DELETE",
         }
@@ -491,7 +491,7 @@ function Admin() {
   const handleToggleOffer = async (offer) => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/offers/" +
+        "http://https://food-ordering-5v9t.onrender.com/api/offers/" +
           offer.id,
         {
           method: "PUT",

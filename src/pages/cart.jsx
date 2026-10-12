@@ -103,7 +103,7 @@ function Cart({
     const revalidateCoupon = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/offers/apply",
+          "http://https://food-ordering-5v9t.onrender.com/api/offers/apply",
           {
             method: "POST",
             headers: {
@@ -232,7 +232,7 @@ function Cart({
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/offers/apply",
+        "http://https://food-ordering-5v9t.onrender.com/api/offers/apply",
         {
           method: "POST",
           headers: {

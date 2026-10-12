@@ -53,7 +53,7 @@ function Signup() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/signup",
+        "http://https://food-ordering-5v9t.onrender.com/api/signup",
         {
           method: "POST",
           headers: {

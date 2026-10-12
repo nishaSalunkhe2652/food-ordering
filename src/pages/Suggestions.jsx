@@ -31,7 +31,7 @@ function Suggestions() {
       setMessage("");
 
       const response = await fetch(
-        "http://localhost:5000/api/suggestions",
+        "http://https://food-ordering-5v9t.onrender.com/api/suggestions",
         {
           method: "POST",
           headers: {

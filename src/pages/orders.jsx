@@ -18,7 +18,7 @@ function Orders() {
 
       try {
         const response = await fetch(
-          `http://localhost:5000/api/users/${user.id}/orders`,
+          `http://https://food-ordering-5v9t.onrender.com/api/users/${user.id}/orders`,
           {
             cache: "no-store",
           }
@@ -36,7 +36,7 @@ function Orders() {
           data.map(async (order) => {
             try {
               const itemResponse = await fetch(
-                `http://localhost:5000/api/orders/${order.id}/items`
+                `http://https://food-ordering-5v9t.onrender.com/api/orders/${order.id}/items`
               );
 
               const items = await itemResponse.json();

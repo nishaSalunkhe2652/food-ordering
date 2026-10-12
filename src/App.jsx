@@ -222,14 +222,14 @@ function AppContent() {
     const checkNotifications = async () => {
       try {
         const ordersResponse = await fetch(
-          "http://localhost:5000/api/orders",
+          "http://https://food-ordering-5v9t.onrender.com/api/orders",
           {
             cache: "no-store",
           }
         );
 
         const suggestionsResponse = await fetch(
-          "http://localhost:5000/api/suggestions",
+          "http://https://food-ordering-5v9t.onrender.com/api/suggestions",
           {
             cache: "no-store",
           }

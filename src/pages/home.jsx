@@ -47,7 +47,7 @@ function Home() {
   const fetchOffers = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/offers"
+        "http://https://food-ordering-5v9t.onrender.com/api/offers"
       );
 
       const data = await response.json();
