@@ -1,10 +1,14 @@
+require("dotenv").config();
+const fs = require("fs");
 const express = require("express");
 const cors = require("cors");
 const mysql = require("mysql2");
 
-const app = express();
 
-const PORT = 5000;
+
+const app = express();
+const PORT = process.env.PORT || 5000;
+
 
 // =====================================================
 // MIDDLEWARE
@@ -17,27 +21,34 @@ app.use(express.json());
 // MYSQL CONNECTION
 // =====================================================
 
+// =====================================================
+// MYSQL CONNECTION
+// =====================================================
+
+
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "root",
-  database: "food_ordering",
+  host: process.env.DB_HOST,
+  port: Number(process.env.DB_PORT || 3306),
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  ssl: {
+    ca: fs.readFileSync("./ca.pem", "utf8"),
+    rejectUnauthorized: true,
+  },
 });
 
 db.connect((error) => {
   if (error) {
-    console.error(
-      "MySQL connection failed:",
-      error.message
-    );
+    console.error("MySQL connection failed!");
+    console.error("Error code:", error.code);
+    console.error("Error message:", error.message);
+    console.error("Full error:", error);
     return;
   }
 
-  console.log(
-    "MySQL connected successfully"
-  );
+  console.log("MySQL connected successfully");
 });
-
 // =====================================================
 // TEST ROUTE
 // =====================================================
