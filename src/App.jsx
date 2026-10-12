@@ -9,9 +9,9 @@ import {
 } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Footer from "./components/footer";
 import LoginSelection from "./pages/LoginSelection";
-import Home from "./pages/Home";
+import Home from "./pages/home";
 import Menu from "./pages/Menu";
 import Cart from "./pages/cart";
 import Checkout from "./pages/Checkout";
