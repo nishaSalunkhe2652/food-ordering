@@ -1,0 +1,778 @@
+/* =====================================================
+   HUNGRY TOWN - MY ORDERS
+   ===================================================== */
+
+.orders-page {
+  min-height: 100vh;
+  background: #fffaf5;
+  padding: 35px 20px 60px;
+}
+
+.orders-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.orders-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.orders-header h1 {
+  margin: 0;
+  color: #17213b;
+  font-size: 38px;
+  font-weight: 800;
+}
+
+.orders-header p {
+  margin: 7px 0 0;
+  color: #64748b;
+  font-size: 17px;
+}
+
+.orders-order-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 13px 22px;
+
+  background: #ff7200;
+  color: white;
+
+  border-radius: 10px;
+
+  text-decoration: none;
+
+  font-weight: 700;
+  font-size: 15px;
+
+  transition: 0.2s ease;
+}
+
+.orders-order-button:hover {
+  background: #e86100;
+  transform: translateY(-1px);
+}
+
+/* =====================================================
+   ERROR
+   ===================================================== */
+
+.orders-error {
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  color: #be123c;
+
+  padding: 14px 18px;
+
+  border-radius: 10px;
+
+  margin-bottom: 20px;
+}
+
+/* =====================================================
+   EMPTY / LOADING
+   ===================================================== */
+
+.orders-empty,
+.orders-loading {
+  background: white;
+  border: 1px solid #eadfd6;
+
+  border-radius: 18px;
+
+  padding: 60px 25px;
+
+  text-align: center;
+
+  box-shadow: 0 5px 20px rgba(30, 41, 59, 0.05);
+}
+
+.orders-empty-icon {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.orders-empty h2,
+.orders-loading h2 {
+  margin: 0 0 8px;
+  color: #17213b;
+}
+
+.orders-empty p {
+  color: #64748b;
+  margin-bottom: 22px;
+}
+
+.orders-main-button {
+  display: inline-flex;
+  padding: 12px 22px;
+
+  background: #ff7200;
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: 9px;
+
+  font-weight: 700;
+}
+
+.orders-spinner {
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+/* =====================================================
+   ORDERS LIST
+   ===================================================== */
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* =====================================================
+   ORDER CARD
+   ===================================================== */
+
+.user-order-card {
+  background: #ffffff;
+
+  border: 1px solid #e7ded6;
+
+  border-radius: 18px;
+
+  padding: 28px;
+
+  box-shadow:
+    0 5px 20px rgba(30, 41, 59, 0.05);
+}
+
+/* =====================================================
+   ORDER HEADER
+   ===================================================== */
+
+.user-order-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid #eee6df;
+}
+
+.user-order-header h2 {
+  margin: 0;
+
+  color: #17213b;
+
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.user-order-header p {
+  margin: 6px 0 0;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+}
+
+.user-order-total {
+  color: #ff7200;
+
+  font-size: 28px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+/* =====================================================
+   STATUS
+   ===================================================== */
+
+.user-order-status {
+  padding: 20px 0 8px;
+}
+
+.user-status-badge {
+  display: inline-flex;
+
+  padding: 7px 16px;
+
+  border-radius: 999px;
+
+  font-size: 14px;
+
+  font-weight: 800;
+}
+
+.user-order-status p {
+  margin: 9px 0 0;
+
+  color: #475569;
+
+  font-size: 15px;
+}
+
+/* Status colors */
+
+.status-pending {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.status-preparing {
+  background: #fff7ed;
+  color: #ea580c;
+}
+
+.status-out-for-delivery {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.status-delivered {
+  background: #ecfdf5;
+  color: #15803d;
+}
+
+.status-cancelled {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+/* =====================================================
+   ⭐ ORDER TIMELINE
+   ===================================================== */
+
+.order-timeline {
+  width: 100%;
+
+  margin: 20px 0 28px;
+
+  padding: 25px 15px;
+
+  background: #fffaf5;
+
+  border: 1px solid #f0e4d9;
+
+  border-radius: 15px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+/* =====================================================
+   TIMELINE STEP
+   ===================================================== */
+
+.timeline-step {
+  width: 150px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+/* =====================================================
+   TIMELINE DOT
+   ===================================================== */
+
+.timeline-dot {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  border: 3px solid #d9dee5;
+
+  font-size: 19px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 3px 8px rgba(15, 23, 42, 0.08);
+
+  transition: all 0.25s ease;
+}
+
+/* =====================================================
+   TIMELINE TEXT
+   ===================================================== */
+
+.timeline-content {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  margin-top: 10px;
+
+  min-height: 48px;
+}
+
+.timeline-content strong {
+  color: #64748b;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.timeline-content span {
+  color: #94a3b8;
+
+  font-size: 11px;
+
+  margin-top: 4px;
+
+  white-space: nowrap;
+}
+
+/* =====================================================
+   COMPLETED STEP
+   ===================================================== */
+
+.timeline-step.completed .timeline-dot {
+  background: #ff7200;
+
+  border-color: #ff7200;
+
+  color: #ffffff;
+}
+
+.timeline-step.completed
+  .timeline-content
+  strong {
+  color: #17213b;
+}
+
+/* =====================================================
+   CURRENT STEP
+   ===================================================== */
+
+.timeline-step.current .timeline-dot {
+  background: #ff7200;
+
+  border-color: #ff7200;
+
+  color: white;
+
+  box-shadow:
+    0 0 0 5px rgba(255, 114, 0, 0.14),
+    0 4px 10px rgba(255, 114, 0, 0.2);
+}
+
+.timeline-step.current
+  .timeline-content
+  strong {
+  color: #ff7200;
+}
+
+/* =====================================================
+   PENDING STEP
+   ===================================================== */
+
+.timeline-step.pending {
+  opacity: 0.7;
+}
+
+.timeline-step.pending .timeline-dot {
+  background: #ffffff;
+
+  border-color: #d9dee5;
+
+  color: #94a3b8;
+}
+
+/* =====================================================
+   CONNECTING LINE
+   ===================================================== */
+
+.timeline-connector {
+  flex: 1;
+
+  min-width: 25px;
+
+  height: 4px;
+
+  margin-top: 22px;
+
+  background: #e2e8f0;
+
+  border-radius: 10px;
+
+  transition: background 0.3s ease;
+}
+
+.timeline-connector.active {
+  background: #ff7200;
+}
+
+/* =====================================================
+   CANCELLED TIMELINE
+   ===================================================== */
+
+.cancelled-timeline {
+  background: #fff8f8;
+
+  border-color: #fecaca;
+
+  justify-content: center;
+
+  gap: 10px;
+}
+
+.timeline-step.cancelled .timeline-dot {
+  background: #dc2626;
+
+  border-color: #dc2626;
+
+  color: white;
+}
+
+.timeline-step.cancelled
+  .timeline-content
+  strong {
+  color: #dc2626;
+}
+
+.timeline-step.cancelled
+  .timeline-content
+  span {
+  color: #ef4444;
+}
+
+.cancelled-line {
+  background: #fca5a5;
+  max-width: 100px;
+}
+
+/* =====================================================
+   CANCELLED MESSAGE
+   ===================================================== */
+
+.order-cancelled-message {
+  background: #fff1f2;
+
+  border: 1px solid #fecdd3;
+
+  color: #be123c;
+
+  padding: 13px 16px;
+
+  border-radius: 9px;
+
+  margin-bottom: 24px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+/* =====================================================
+   ORDER ITEMS
+   ===================================================== */
+
+.user-order-items {
+  margin-top: 10px;
+
+  border-top: 1px solid #eee6df;
+
+  padding-top: 22px;
+}
+
+.user-order-items h3 {
+  margin: 0 0 15px;
+
+  color: #17213b;
+
+  font-size: 19px;
+}
+
+.user-order-item {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 14px 0;
+
+  border-bottom: 1px solid #f1ece7;
+}
+
+.user-order-item:last-child {
+  border-bottom: none;
+}
+
+.user-order-item > div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.user-order-item strong {
+  color: #17213b;
+
+  font-size: 15px;
+}
+
+.user-order-item span {
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+/* =====================================================
+   COUPON
+   ===================================================== */
+
+.user-order-coupon {
+  margin-top: 18px;
+
+  padding: 13px 16px;
+
+  background: #f0fdf4;
+
+  border: 1px solid #bbf7d0;
+
+  border-radius: 9px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  flex-wrap: wrap;
+
+  color: #166534;
+
+  font-size: 14px;
+}
+
+.user-order-coupon strong {
+  color: #15803d;
+}
+
+.user-order-coupon span {
+  margin-left: auto;
+
+  font-weight: 700;
+}
+
+/* =====================================================
+   ADDRESS
+   ===================================================== */
+
+.user-order-address {
+  margin-top: 20px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #eee6df;
+}
+
+.user-order-address strong {
+  color: #17213b;
+
+  font-size: 15px;
+}
+
+.user-order-address p {
+  margin: 8px 0 0;
+
+  color: #64748b;
+
+  line-height: 1.6;
+
+  font-size: 14px;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 850px) {
+  .order-timeline {
+    padding: 20px 8px;
+  }
+
+  .timeline-step {
+    width: 115px;
+  }
+
+  .timeline-content strong {
+    font-size: 12px;
+  }
+
+  .timeline-content span {
+    font-size: 10px;
+  }
+
+  .timeline-dot {
+    width: 43px;
+    height: 43px;
+    font-size: 17px;
+  }
+
+  .timeline-connector {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 650px) {
+  .orders-page {
+    padding: 25px 12px 45px;
+  }
+
+  .orders-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .orders-header h1 {
+    font-size: 30px;
+  }
+
+  .orders-order-button {
+    width: 100%;
+  }
+
+  .user-order-card {
+    padding: 20px 15px;
+  }
+
+  .user-order-header h2 {
+    font-size: 22px;
+  }
+
+  .user-order-total {
+    font-size: 22px;
+  }
+
+  /* Mobile timeline becomes vertical */
+
+  .order-timeline {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 20px;
+
+    gap: 0;
+  }
+
+  .timeline-step {
+    width: 100%;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    text-align: left;
+  }
+
+  .timeline-content {
+    align-items: flex-start;
+
+    margin-top: 0;
+
+    margin-left: 13px;
+
+    min-height: auto;
+  }
+
+  .timeline-content strong,
+  .timeline-content span {
+    white-space: normal;
+  }
+
+  .timeline-connector {
+    width: 4px;
+
+    height: 28px;
+
+    min-width: 4px;
+
+    margin: 0 0 0 22px;
+
+    flex: none;
+  }
+
+  .cancelled-timeline {
+    align-items: flex-start;
+  }
+
+  .cancelled-line {
+    width: 4px;
+
+    height: 25px;
+
+    margin-left: 22px;
+
+    max-width: none;
+  }
+
+  .user-order-item {
+    align-items: flex-start;
+  }
+
+  .user-order-coupon span {
+    margin-left: 0;
+
+    width: 100%;
+  }
+}

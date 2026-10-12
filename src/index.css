@@ -1,0 +1,775 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: #fffaf5;
+  color: #292929;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* ========================================
+   MENU BACKGROUND AND HEADING
+======================================== */
+
+.menu-page,
+.menu-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 38px 32px 55px;
+  background: #fffaf5;
+}
+
+.menu-heading,
+.menu-header {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto 25px;
+}
+
+.menu-heading h1,
+.menu-header h1 {
+  color: #172b45;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.menu-heading p,
+.menu-header p {
+  color: #777777;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* ========================================
+   SEARCH BOX
+======================================== */
+
+.search-container {
+  width: 100%;
+  max-width: 1060px;
+  margin: 20px auto 35px;
+}
+
+.search-container input {
+  width: 100%;
+  height: 76px;
+  padding: 0 35px;
+  border-radius: 40px;
+  border: 2px solid #dddddd;
+  background: #ffffff;
+  color: #333333;
+  font-size: 20px;
+  outline: none;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+.search-container input:focus {
+  border-color: #ff5722;
+}
+
+.search-container input::placeholder {
+  color: #999999;
+}
+
+/* ========================================
+   CATEGORY BUTTONS
+======================================== */
+
+.categories {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 0 auto 52px;
+}
+
+.categories button {
+  padding: 13px 23px;
+  border-radius: 30px;
+  border: 1px solid #dddddd;
+  background: #ffffff;
+  color: #292929;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.categories button:hover,
+.categories button.active {
+  background: #ff5722;
+  color: #ffffff;
+  border-color: #ff5722;
+}
+
+/* ========================================
+   FOOD SECTION
+======================================== */
+
+.food-section {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto 50px;
+}
+
+.food-section h2 {
+  text-align: center;
+  color: #172b45;
+  font-size: 31px;
+  font-weight: 800;
+  margin: 0 0 30px;
+}
+
+/* ========================================
+   FOOD GRID
+======================================== */
+
+.food-grid,
+.food-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 25px;
+  align-items: start;
+}
+
+/* ========================================
+   FOOD CARD
+======================================== */
+
+.food-card {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0 !important;
+  margin: 0;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 20px;
+  box-shadow: 0 5px 18px rgba(60, 35, 20, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ========================================
+   IMAGE BOX
+======================================== */
+
+.food-image-container {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  min-height: 180px;
+  max-height: 180px;
+  overflow: hidden;
+  background: #f2ebe5;
+  flex-shrink: 0;
+}
+
+.food-image-real {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.image-loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #999999;
+  font-size: 13px;
+  background: #f5eee8;
+}
+
+.image-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  background: #f5eee8;
+}
+
+.food-veg-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 27px;
+  height: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #159447;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #159447;
+  font-size: 11px;
+}
+
+/* ========================================
+   FOOD DETAILS
+======================================== */
+
+.food-card-content {
+  width: 100%;
+  min-height: 180px;
+  padding: 17px 12px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px;
+}
+
+.food-card-content h3 {
+  width: 100%;
+  min-height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #292929;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.food-price {
+  color: #ff5722 !important;
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  margin: 4px 0 10px !important;
+}
+
+/* ========================================
+   CART BUTTON
+======================================== */
+
+.add-cart-button {
+  width: 90%;
+  max-width: 200px;
+  padding: 12px 10px;
+  border: none;
+  border-radius: 30px;
+  background: #ff5722;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: 0.25s ease;
+}
+
+.add-cart-button:hover {
+  background: #e64a19;
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1250px) {
+  .food-grid,
+  .food-container {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 950px) {
+  .menu-page,
+  .menu-container {
+    padding: 30px 20px;
+  }
+
+  .food-grid,
+  .food-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .menu-heading h1,
+  .menu-header h1 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 650px) {
+  .food-grid,
+  .food-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .food-image-container {
+    height: 145px;
+    min-height: 145px;
+    max-height: 145px;
+  }
+
+  .food-card-content {
+    min-height: 165px;
+    padding: 12px 7px 15px;
+  }
+
+  .food-card-content h3 {
+    font-size: 14px;
+  }
+
+  .food-price {
+    font-size: 15px !important;
+  }
+
+  .add-cart-button {
+    width: 100%;
+    padding: 10px 5px;
+    font-size: 12px;
+  }
+
+  .search-container input {
+    height: 60px;
+    font-size: 16px;
+    padding: 0 20px;
+  }
+}
+
+/* ========================================
+   HUNGRY TOWN NAVBAR ONLY
+======================================== */
+
+.navbar {
+  width: 100%;
+  min-height: 115px;
+  padding: 18px 4.8%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  border-bottom: 1px solid #eee4dc;
+  box-shadow: 0 3px 18px rgba(60, 35, 20, 0.06);
+  position: relative;
+  z-index: 1000;
+}
+
+/* Brand */
+
+.navbar .brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.navbar .brand-symbol {
+  font-size: 43px;
+  line-height: 1;
+  filter: grayscale(15%);
+}
+
+.navbar .brand-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.navbar .brand-name {
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -1px;
+  white-space: nowrap;
+}
+
+.navbar .brand-hungry {
+  color: #29233f;
+}
+
+.navbar .brand-town {
+  color: #ff5722;
+}
+
+.navbar .brand-tagline {
+  margin-top: 9px;
+  color: #777080;
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  white-space: nowrap;
+}
+
+.navbar .brand-tagline span {
+  color: #ff5722;
+  margin: 0 3px;
+}
+
+/* Navigation */
+
+.navbar .nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: nowrap;
+}
+
+.navbar .nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 17px 0;
+  color: #333333;
+  font-family: "DM Sans", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: color 0.25s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #ff5722;
+}
+
+.navbar .active-link {
+  color: #ff5722 !important;
+  border-bottom-color: #ff5722;
+}
+
+/* Cart count */
+
+.navbar .cart-link {
+  position: relative;
+}
+
+.navbar .cart-count {
+  position: absolute;
+  top: 2px;
+  right: -12px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ff5722;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+/* My Orders button */
+
+.navbar .orders-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 25px;
+  background: #ff5722;
+  color: #ffffff;
+  border-radius: 32px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.navbar .orders-button:hover {
+  background: #e64a19;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+
+@media (max-width: 1050px) {
+  .navbar {
+    padding: 18px 3%;
+    gap: 15px;
+  }
+
+  .navbar .brand-name {
+    font-size: 34px;
+  }
+
+  .navbar .brand-symbol {
+    font-size: 35px;
+  }
+
+  .navbar .nav-links {
+    gap: 16px;
+  }
+
+  .navbar .nav-link {
+    font-size: 14px;
+  }
+
+  .navbar .orders-button {
+    padding: 13px 17px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 750px) {
+  .navbar {
+    min-height: auto;
+    flex-direction: column;
+    padding: 20px 15px;
+  }
+
+  .navbar .brand {
+    justify-content: center;
+  }
+
+  .navbar .brand-name {
+    font-size: 35px;
+  }
+
+  .navbar .nav-links {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+
+/* ========================================
+   HUNGRY TOWN FOOTER ONLY
+======================================== */
+
+.ht-footer {
+  width: 100%;
+  display: block;
+  clear: both;
+  position: relative;
+  margin-top: 70px;
+  background: #fffaf5;
+  color: #35304f;
+  border-top: 1px solid #f0ddd2;
+  overflow: hidden;
+}
+
+.ht-footer-main {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 60px 5% 45px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.3fr 1.2fr;
+  gap: 45px;
+  align-items: start;
+}
+
+/* Brand */
+
+.ht-footer-brand {
+  min-width: 0;
+}
+
+.ht-footer-logo {
+  display: inline-block;
+  text-decoration: none;
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.ht-logo-hungry {
+  color: #30264e;
+}
+
+.ht-logo-town {
+  color: #ff5722;
+}
+
+.ht-footer-tagline {
+  margin-top: 13px;
+  color: #625a78;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.ht-footer-tagline span {
+  color: #ff5722;
+  margin: 0 3px;
+}
+
+.ht-footer-description {
+  margin-top: 25px;
+  color: #625d70;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* Social Links */
+
+.ht-social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.ht-social-links span {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #ffede3;
+  color: #30264e;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Footer Columns */
+
+.ht-footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.ht-footer-column h3 {
+  margin-bottom: 12px;
+  color: #3d2b68;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.ht-footer-column a,
+.ht-footer-column span,
+.ht-footer-column p {
+  color: #625d70;
+  font-size: 14px;
+  line-height: 1.6;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.ht-footer-column a:hover {
+  color: #ff5722;
+}
+
+.ht-footer-column span {
+  display: block;
+}
+
+.ht-contact-column p {
+  margin: 0;
+}
+
+/* Bottom Footer */
+
+.ht-footer-bottom {
+  width: 100%;
+  min-height: 130px;
+  padding: 25px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid #f0ddd2;
+  background: #fffdfb;
+}
+
+.ht-bottom-brand {
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+  font-size: 31px;
+  font-weight: 700;
+}
+
+.ht-footer-bottom p {
+  color: #777080;
+  font-size: 13px;
+  text-align: center;
+}
+
+.ht-bottom-tagline {
+  color: #ff5722;
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.ht-bottom-tagline span {
+  display: block;
+}
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+  .ht-footer-main {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .ht-footer-bottom {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .ht-bottom-tagline {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .ht-footer-main {
+    grid-template-columns: 1fr;
+    padding: 40px 25px;
+    gap: 35px;
+  }
+
+  .ht-footer-logo {
+    font-size: 39px;
+  }
+
+  .ht-footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ht-bottom-brand {
+    font-size: 28px;
+  }
+
+  .ht-footer-bottom p {
+    font-size: 12px;
+  }
+}
